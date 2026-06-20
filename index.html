@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Este es el css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Proyecto M1 FT76</title>
+ </head>
+    <!--ejemplo para doc-->
+    <!--![Tux, the Linux mascot](/assets/images/tux.png)-->
+ <body>
+      <!--//Es el encabezado// -->  
+        <header>
+            <nav class="nav">
+                <div class="nav__brand">
+                    <span class="nav__logo">Paleta de Colores</span>
+                    <span class="nav__sub">By Colorfly Studio</span>
+                </div>
+                
+                <ul class="nav__links">
+                    <li><a class="nav__link" href="#generador">"Generador"</a></li>
+                    <li><a class="nav__link" href="#guardadas">"Mi paleta"</a></li>
+                </ul>
+            </nav>        
+        </header>    
+
+        <!--Contenido del generador-->
+        <main>
+            <section id="generador"> 
+                <h2>Generar Paleta</h2>
+
+                <section class="galeria">
+                    <article class="swatch">
+                        <div class="swatch__color"></div>
+                        <div class="swatch__info">
+                            <p class="swatch__nombre">Primario</p>
+                            <p class="swatch__codigo">hsl(149, 67%, 40%)</p>
+                        </div>
+                    </article>
+
+                    <article class="swatch">
+                        <div class="swatch__color swatch__color--claro"></div>
+                       <div class="swatch__info">
+                            <p class="swatch__nombre">Primario claro</p>
+                            <p class="swatch__codigo">hsl(149, 67%, 75%)</p>
+                        </div>
+                    </article>
+
+                    <article class="swatch">
+                        <div class="swatch__color swatch__color--oscuro"></div>
+                        <div class="swatch__info">
+                            <p class="swatch__nombre">Primario oscuro</p>
+                            <p class="swatch__codigo">hsl(149, 55%, 15%)</p>
+                        </div>
+                    </article>
+
+                    <article class="swatch">
+                        <div class="swatch__color swatch__color--acento"></div>
+                        <div class="swatch__info">
+                            <p class="swatch__nombre">Acento</p>
+                            <p class="swatch__codigo">hsl(204, 71%, 61%)</p>
+                        </div>
+                    </article>
+                </section> 
+            </section>
+        </main>
+        
+        <footer>
+             <p>Colorfly Studio &copy; Junio 2026</p>
+        </footer>
+ </body>
+
+</html>
