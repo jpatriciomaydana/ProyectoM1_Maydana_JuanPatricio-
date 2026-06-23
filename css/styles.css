@@ -68,14 +68,14 @@ h3 {font-size: 1.25rem;
 
 .nav__logo {
     font-family: "Playfair Display", serif;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
     color: var(--color-primario);
 }
 
 .nav__sub {
     font-family: "Oswald", sans-serif; 
-    font-size: 0.8rem; 
+    font-size: 1rem; 
     text-transform: uppercase; 
     letter-spacing: 1px; 
     color: var(--color-primario-oscuro)
@@ -105,7 +105,12 @@ main {
 }
 
 main h2 {
-    margin-bottom: 1rem;
+    color: hsl(210, 20%, 25%);   
+    font-size: 1.9rem;           
+    font-weight: 400;            
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: 0.5px;
     
 }
  /*--layout--swatch gallery--*/
@@ -123,19 +128,23 @@ main h2 {
     border-radius: 0.75rem;
     overflow: hidden;
     background-color: var(--color-superficie);
-    box-shadow: 0 2px 8px hsl(213, 34%, 23%);
+    border: 1px solid hsla(0, 1%, 23%, 0.12);
+    box-shadow: 0 4px 12px hsla(214, 23%, 14%, 0.15);
     transition: 
          transform 0.2s,
-         box shadow 0.2ms;
+         box-shadow 0.2s;
 }
 
 .swatch__color {
-    height: 7rem;
-    background-color: var(--color-primario);
+    height: 150px;
+    width: 100%;
+    
 }
 
 .swatch__info {
     padding: 1rem;
+    background-color: blanchedalmond;
+    gap: 0.5rem;
 }
 
 .swatch__nombre {
@@ -168,6 +177,45 @@ main h2 {
 .swatch:focus {
     outline: 3px solid var(--color-acento);
     outline-offset: 2px;
+}
+
+.boton, .select {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.boton--primario {
+    background-color: hsl(210, 30%, 15%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    font-weight: 600;
+}
+
+.boton--primario:hover {
+    background-color: hsl(210, 30%, 25%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px hsl(210, 30%, 10%, 0.15);
+}
+
+.select {
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(210, 10%, 80%);
+    color: hsl(210, 20%, 20%);
+}
+
+.select:hover {
+    border-color: hsl(210, 20%, 50%);
+}
+
+.controles {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 /*layout--footer--*/
