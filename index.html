@@ -31,41 +31,24 @@
         <!--Contenido del generador-->
         <main>
             <section id="generador"> 
-                <h2>Generar Paleta</h2>
+                <h2>Encuentra tu combinación con Colorfly Studio</h2>
 
-                <section class="galeria">
-                    <article class="swatch">
-                        <div class="swatch__color"></div>
-                        <div class="swatch__info">
-                            <p class="swatch__nombre">Primario</p>
-                            <p class="swatch__codigo"> hsl(149, 67%, 40%) · #22aa64 </p>                            
-                        </div>
-                    </article>
+                <!--recordar colocar button-->
 
-                    <article class="swatch">
-                        <div class="swatch__color swatch__color--claro"></div>
-                       <div class="swatch__info">
-                            <p class="swatch__nombre">Primario claro</p>
-                            <p class="swatch__codigo">hsl(149, 67%, 75%) · #95eabe</p>
-                        </div>
-                    </article>
+                <div class="controles">
+                    <button class="boton boton--primario" id="generar">Generar Paleta</button>
+                    <div class="controles__campo">
+                        <label class="controles__label" for="cantidad"></label>
+                        <select class="select" id="cantidad">
+                            <option value="6">6 Colores</option>
+                            <option value="8">8 Colores</option>
+                            <option value="9">9 Colores</option>
+                        </select>    
+                    </div>
+                </div>  
 
-                    <article class="swatch">
-                        <div class="swatch__color swatch__color--oscuro"></div>
-                        <div class="swatch__info">
-                            <p class="swatch__nombre">Primario oscuro</p>
-                            <p class="swatch__codigo">hsl(149, 55%, 15%) · #113b26</p>
-                        </div>
-                    </article>
 
-                    <article class="swatch">
-                        <div class="swatch__color swatch__color--acento"></div>
-                        <div class="swatch__info">
-                            <p class="swatch__nombre">Acento</p>
-                            <p class="swatch__codigo">hsl(204, 71%, 61%) · #55aae2</p>
-                        </div>
-                    </article>
-                </section> 
+                <section class="galeria" id="galeria"></section>          
             </section>
         </main>
         
