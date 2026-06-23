@@ -14,6 +14,18 @@ function hslToHex(h, s, l) {
 }
 
 function crearswatch(colorhsl, colorhex, nombre) {
+
+    const tarjeta = document.createElement("div");
+    tarjeta.classList.add("color__tarjeta");
+    tarjeta.style.background = colorhsl;
+    tarjeta.dataset.hsl = colorhsl;
+    tarjeta.dataset.hex = colorhex;
+    tarjeta.dataset.nombre = nombre;
+
+    const lockbtn = document.createElement("button");
+    lockbtn.classList.add("lock-btn");
+    lockbtn.innerText = "🔓";
+
     const swatch = document.createElement("article");
     swatch.className = "swatch";
 
@@ -32,10 +44,14 @@ function crearswatch(colorhsl, colorhex, nombre) {
     elcodigo.className = "swatch__codigo";
     elcodigo.textContent = colorhsl + " · " + colorhex;
 
+    
     info.append(elnombre, elcodigo);
     swatch.append(color, info);
+    tarjeta.append(lockbtn, swatch);
 
-    return swatch;
+    return tarjeta;
+
+    
 }
 
 function generarcolor() {
@@ -49,15 +65,19 @@ function generarcolor() {
 
 const galeria = document.getElementById("galeria");
 
-function renderpaleta(cantidad) {
+function renderpaleta(cantidad) {    
+    const bloqueados = [...galeria.querySelectorAll(".color__tarjeta.is-locked")];
     galeria.innerHTML = "";
-
-    for (let i = 0; i < cantidad; i++) {
+    bloqueados.forEach(t => galeria.appendChild(t));
+    const faltan = cantidad - bloqueados.length;
+        for (let i = 0; i < faltan; i++) {
         const color = generarcolor();
         const swatch = crearswatch(color.hsl, color.hex, "color " + (i + 1));
         galeria.appendChild(swatch);
     }
+        
 }
+
 
 const boton = document.getElementById("generar"); 
 const selector = document.getElementById("cantidad");
@@ -72,3 +92,14 @@ if (boton) {
 }
 
 renderpaleta(6);
+
+galeria.addEventListener("click", (event) => {
+    
+    const lockBtn = event.target.closest(".lock-btn");
+    
+    if (lockBtn) {
+        const tarjeta = lockBtn.closest(".color__tarjeta");        
+        const isLocked = tarjeta.classList.toggle("is-locked");        
+        lockBtn.innerText = isLocked ? "🔒" : "🔓";
+    }
+});
