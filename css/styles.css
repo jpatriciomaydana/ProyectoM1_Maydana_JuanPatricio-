@@ -144,7 +144,7 @@ main h2 {
 .swatch__info {
     padding: 1rem;
     background-color: blanchedalmond;
-    gap: 0.5rem;
+    gap: 0.5rem;   
 }
 
 .swatch__nombre {
@@ -155,6 +155,8 @@ main h2 {
 .swatch__codigo {
     font-size: 0.875rem;
     color: var(--color-texto-suave);
+    white-space: nowrap;      
+    overflow: hidden;          
 }
 
 .swatch__color--claro {
@@ -216,6 +218,44 @@ main h2 {
     align-items: center;
     gap: 1rem;
     margin-bottom: 2rem;
+}
+
+.color__tarjeta {
+    position: relative;
+    border-radius: 0.75rem;
+}
+
+/* --- aca botón candado --- */
+.lock-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: hsla(0, 0%, 0%, 0.35);
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lock-btn:hover {
+    background: hsla(0, 0%, 0%, 0.55);
+}
+
+
+.color__tarjeta.is-locked {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 2px;
+}
+
+.color__tarjeta.is-locked .lock-btn {
+    background: hsla(204, 71%, 40%, 0.8);
 }
 
 /*layout--footer--*/
