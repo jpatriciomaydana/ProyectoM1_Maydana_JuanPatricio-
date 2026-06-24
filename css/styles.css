@@ -316,3 +316,36 @@ footer {
 .guardadas__titulo {
     margin-bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+
+    /* Nav: logo arriba, links abajo */
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav__links {
+        gap: 1rem;
+    }
+
+    /* Controles: botones apilados verticalmente */
+    .controles {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #guardar {
+        margin-left: 0;
+    }
+
+    /* Tarjetas más chicas en mobile */
+    .swatch__color {
+        height: 100px;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}
