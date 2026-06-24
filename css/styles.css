@@ -292,22 +292,7 @@ main h2 {
     background: hsla(204, 71%, 40%, 0.8);
 }
 
-.paleta-guardada {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.color-chip {
-    width: 50px;
-    height: 50px;
-    border-radius: 0.5rem;
-}
-
-#limpiar {
-    margin-bottom: 1rem; 
-}
-
+/*---paletas---*/
 #guardadas {
     margin-top: 3rem;
     padding: 2rem 0;
@@ -320,6 +305,43 @@ main h2 {
     margin-bottom: 1rem;
 }
 
+#limpiar {
+    margin-bottom: 1rem; 
+}
+
+.paleta-guardada {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.color-chip {
+    width: 50px;
+    height: 50px;
+    border-radius: 0.5rem;
+}
+
+/*--Aca componente copy color--*/
+#toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: hsl(210, 30%, 15%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+#toast.visible {
+    opacity: 1;
+}
+
+/*---seccion ajustes tamaño---*/
 @media (max-width: 768px) {
 
     /* Nav: logo arriba, links abajo */
@@ -333,7 +355,6 @@ main h2 {
         gap: 1rem;
     }
 
-    /* los botones estan apilados verticalmente */
     .controles {
         flex-direction: column;
         align-items: stretch;

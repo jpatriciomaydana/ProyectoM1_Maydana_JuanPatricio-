@@ -101,12 +101,26 @@ galeria.addEventListener("click", (event) => {
         const tarjeta = lockBtn.closest(".color__tarjeta");        
         const isLocked = tarjeta.classList.toggle("is-locked");        
         lockBtn.innerText = isLocked ? "🔒" : "🔓";
+        return;
+    }
+    const tarjeta = event.target.closest(".color__tarjeta");
+    if (tarjeta) {
+        const hex = tarjeta.dataset.hex;
+        navigator.clipboard.writeText(hex);
+        mostrartoast("¡Código " + hex + " copiado!");
     }
 });
 
+// Muestra un mensaje temporal en pantalla
+
+function mostrartoast(mensaje) {
+    const toast = document.getElementById("toast");
+    toast.textContent = mensaje;
+    toast.classList.add("visible");
+    setTimeout(() => toast.classList.remove("visible"), 2000);
+}
 
 function guardarpaleta() {
-    // con esto agarramos las tarjetas que hay en pantalla //
     const tarjetas = [...galeria.querySelectorAll(".color__tarjeta.is-locked")];
     
     const colores = tarjetas.map(t => ({
@@ -127,7 +141,7 @@ function guardarpaleta() {
     // Guardar todo de vuelta en localStorage//
     localStorage.setItem("paletas", JSON.stringify(guardadas));
 
-    alert("¡Paleta guardada!");
+    mostrartoast("¡Paleta guardada!");
     mostrarguardadas()
 }
 
