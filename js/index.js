@@ -50,7 +50,6 @@ function crearswatch(colorhsl, colorhex, nombre) {
     tarjeta.append(lockbtn, swatch);
 
     return tarjeta;
-
     
 }
 
@@ -185,5 +184,24 @@ if (botonlimpiar) {
     botonlimpiar.addEventListener("click", function() {
         localStorage.removeItem("paletas");
         mostrarguardadas();
+    });
+}
+
+let formatoActual = "hsl";
+
+const botonformato = document.getElementById("toggle-formato");
+if (botonformato) {
+    botonformato.addEventListener("click", function() {
+        formatoActual = formatoActual === "hsl" ? "hex" : "hsl";
+        botonformato.textContent = formatoActual === "hsl" ? "Ver HEX" : "Ver HSL";
+        
+        document.querySelectorAll(".color__tarjeta").forEach(tarjeta => {
+            const codigo = tarjeta.querySelector(".swatch__codigo");
+            if (formatoActual === "hsl") {
+                codigo.textContent = tarjeta.dataset.hsl;
+            } else {
+                codigo.textContent = tarjeta.dataset.hex;
+            }
+        });
     });
 }
