@@ -103,3 +103,73 @@ galeria.addEventListener("click", (event) => {
         lockBtn.innerText = isLocked ? "🔒" : "🔓";
     }
 });
+
+
+function guardarpaleta() {
+    // con esto agarramos las tarjetas que hay en pantalla //
+    const tarjetas = [...galeria.querySelectorAll(".color__tarjeta.is-locked")];
+    
+    const colores = tarjetas.map(t => ({
+        hsl: t.dataset.hsl,
+        hex: t.dataset.hex,
+        nombre: t.dataset.nombre
+    }));
+
+    // Traer las que ya hay guardadas, o un array vacío si no hay ninguna?//
+    const guardadas = JSON.parse(localStorage.getItem("paletas") || "[]");
+    
+    
+    guardadas.push({
+        id: Date.now(),
+        colores: colores
+    });
+
+    // Guardar todo de vuelta en localStorage//
+    localStorage.setItem("paletas", JSON.stringify(guardadas));
+
+    alert("¡Paleta guardada!");
+    mostrarguardadas()
+}
+
+// Con esto se conecta el botón guardar //
+const botonguardar = document.getElementById("guardar");
+if (botonguardar) {
+    botonguardar.addEventListener("click", guardarpaleta);
+}
+
+function mostrarguardadas() {
+    const contenedor = document.getElementById("lista-guardadas");
+    const guardadas = JSON.parse(localStorage.getItem("paletas") || "[]");
+
+    if (guardadas.length === 0) {
+        contenedor.innerHTML = "<p>No hay paletas guardadas todavía.</p>";
+        return;
+    }
+
+    contenedor.innerHTML = "";
+
+    guardadas.forEach(paleta => {
+        const fila = document.createElement("div");
+        fila.classList.add("paleta-guardada");
+
+        paleta.colores.forEach(color => {
+            const chip = document.createElement("div");
+            chip.classList.add("color-chip");
+            chip.style.background = color.hsl;
+            chip.title = color.hex;
+            fila.appendChild(chip);
+        });
+
+        contenedor.appendChild(fila);
+    });
+}
+
+mostrarguardadas();
+
+const botonlimpiar = document.getElementById("limpiar");
+if (botonlimpiar) {
+    botonlimpiar.addEventListener("click", function() {
+        localStorage.removeItem("paletas");
+        mostrarguardadas();
+    });
+}
