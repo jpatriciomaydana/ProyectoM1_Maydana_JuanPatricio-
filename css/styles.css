@@ -12,7 +12,7 @@ box-sizing: border-box;
  --color-acento: hsl(204, 71%, 61%);
  --color-acento-oscuro: hsl(204, 56%, 37%);
 
- --color-fondo: hsl(182, 86%, 53%);
+ --color-fondo: hsl(181, 88%, 68%);
  --color-fondo-1: hsl(190, 86%, 53%);
  --color-fondo-2: hsl(175, 86%, 53%);
  --color-superficie: hsl(0, 0%, 100%);
@@ -220,6 +220,10 @@ main h2 {
     box-shadow: 0 4px 8px hsl(210, 30%, 10%, 0.15);
 }
 
+.boton--primario:active {
+    transform: translateY(1px);
+}
+
 .select {
     background-color: hsl(0, 0%, 100%);
     border: 1px solid hsl(210, 10%, 80%);
@@ -251,7 +255,7 @@ main h2 {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-    background: hsla(0, 0%, 0%, 0.35);
+    background: hsla(0, 0%, 2%, 0.35);
     border: none;
     border-radius: 50%;
     width: 2rem;
