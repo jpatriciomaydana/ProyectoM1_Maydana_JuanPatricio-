@@ -46,6 +46,23 @@ h2 {font-size: 1.75rem;
 h3 {font-size: 1.25rem;
 }
 
+.hero {
+    text-align: center;
+    padding: 3rem 1.5rem 1rem;
+}
+
+.hero__titulo {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-primario-oscuro);
+    margin-bottom: 0.5rem;
+}
+
+.hero__sub {
+    font-size: 1.2rem;
+    color: var(--color-primario-oscuro);
+}
+
 
 /*---layout header---*/
 .nav {
@@ -54,7 +71,7 @@ h3 {font-size: 1.25rem;
     justify-content: space-between;
     padding: 1rem 1.5rem;
     background-color: var(--color-superficie);
-    box-shadow: rgb(39, 57, 79) 0px 20px 30px -10px;
+    box-shadow: hsl(213, 34%, 23%) 0px 20px 30px -10px;
 }
 
 /*---primero aqui el contenedor delogo y sub---*/
