@@ -229,6 +229,11 @@ main h2 {
     transform: translateY(1px);
 }
 
+.boton:focus {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 2px;
+}
+
 .select {
     background-color: hsl(0, 0%, 100%);
     border: 1px solid hsl(210, 10%, 80%);
