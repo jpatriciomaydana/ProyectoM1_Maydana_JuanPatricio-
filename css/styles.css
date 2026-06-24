@@ -237,6 +237,10 @@ main h2 {
     margin-bottom: 2rem;
 }
 
+#guardar {
+    margin-left: auto;
+}
+
 .color__tarjeta {
     position: relative;
     border-radius: 0.75rem;
