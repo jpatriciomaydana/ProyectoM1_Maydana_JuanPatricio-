@@ -144,14 +144,6 @@ Las capturas del proceso están en la carpeta `/Doc IA`.
 
 ## Capturas 
 
-### Bloqueo de colores
-![bloqueo-1](./Doc%20IA/bloqueo-1.png)
-![bloqueo-2](./Doc%20IA/bloqueo-2.png)
-![bloqueo-3](./Doc%20IA/bloqueo-3.png)
-![bloqueo-4](./Doc%20IA/bloqueo-4.png)
-![bloqueo-5](./Doc%20IA/bloqueo-5.png)
-![bloqueo-6](./Doc%20IA/bloqueo-6.png)
-
 ### Diferencia dataset vs textContent
 ![diferencia](./Doc%20IA/diferencia-.png)
 
