@@ -144,4 +144,4 @@ Las capturas del proceso están en la carpeta `/Doc IA`.
 
 ## Demo
 
-![Demo Colorfly Studio](./Capturas/demo.gif)
+![Demo Colorfly Studio](./Capturas/DemoGif.gif)
